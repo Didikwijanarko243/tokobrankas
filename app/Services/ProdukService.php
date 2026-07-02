@@ -19,6 +19,7 @@ class ProdukService
     {
         $products = Product::query()
             ->active()
+            ->featured()
             ->with('category')
             ->latest()
             ->take($limit)

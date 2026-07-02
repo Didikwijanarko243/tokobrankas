@@ -2,8 +2,7 @@
 <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
     <div class="h-56 w-full">
         <a href="#">
-            <img class="mx-auto h-full dark:hidden"
-                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt="" />
+            <img class="mx-auto h-full dark:hidden" src="{{ $produk->thumbnail }}" alt="" />
             <img class="mx-auto hidden h-full dark:block"
                 src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="" />
         </a>
@@ -11,11 +10,12 @@
     <div class="pt-6">
         <div class="mb-4 flex items-center justify-between gap-4">
             <span
-                class="me-2 rounded bg-wood-100 px-2.5 py-0.5 text-xs font-medium text-wood-800 dark:bg-wood-900 dark:text-wood-300">
-                Up to 35% off {{ $produk->name }} </span>
+                class="me-2 rounded bg-wood-200 px-2.5 py-0.5 text-xs font-medium text-wood-800 dark:bg-wood-900 dark:text-wood-300">
+                Diskon {{ round((($produk->price - $produk->sale_price) / $produk->price) * 100) }} % </span>
 
             <div class="flex items-center justify-end gap-1">
-                <button type="button" data-tooltip-target="tooltip-quick-look"
+
+                {{-- <button type="button" data-tooltip-target="tooltip-quick-look"
                     class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                     <span class="sr-only"> Quick look </span>
                     <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -46,16 +46,16 @@
                     data-popper-placement="top">
                     Add to favorites
                     <div class="tooltip-arrow" data-popper-arrow=""></div>
-                </div>
+                </div> --}}
+
             </div>
         </div>
 
         <a href="#"
-            class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">Apple
-            iMac 27", 1TB HDD, Retina 5K Display, M3 Max</a>
+            class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">{{ $produk->name }}</a>
 
         <div class="mt-2 flex items-center gap-2">
-            <div class="flex items-center">
+            {{-- <div class="flex items-center">
                 <svg class="h-4 w-4 text-yellow-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -85,10 +85,10 @@
                     <path
                         d="M13.8 4.2a2 2 0 0 0-3.6 0L8.4 8.4l-4.6.3a2 2 0 0 0-1.1 3.5l3.5 3-1 4.4c-.5 1.7 1.4 3 2.9 2.1l3.9-2.3 3.9 2.3c1.5 1 3.4-.4 3-2.1l-1-4.4 3.4-3a2 2 0 0 0-1.1-3.5l-4.6-.3-1.8-4.2Z" />
                 </svg>
-            </div>
-
-            <p class="text-sm font-medium text-gray-900 dark:text-white">5.0</p>
-            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">(455)</p>
+            </div> --}}
+            <x-rating :rating="$produk->rating_average" />
+            <p class="text-sm font-medium text-gray-900 dark:text-white">{{ $produk->rating_average }}</p>
+            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">({{ $produk->rating_count }})</p>
         </div>
 
         <ul class="mt-2 flex items-center gap-4">
@@ -113,9 +113,10 @@
 
         <div class="mt-4 flex items-center">
             <span class="text-sm text-gray-400 line-through">
-                Rp.350.000
+                {{ 'Rp. ' . number_format($produk->price, 0, ',', '.') }}
             </span>
-            <p class="text-xl ml-4 font-extrabold leading-tight text-gray-900 dark:text-white">Rp.1000.000
+            <p class="text-medium ml-4 font-bold leading-tight text-gray-900 dark:text-white">
+                {{ 'Rp ' . number_format($produk->sale_price, 0, ',', '.') }}
             </p>
         </div>
         <div class="mt-4 flex items-center">

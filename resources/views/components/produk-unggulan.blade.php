@@ -43,10 +43,10 @@
                         </li>
                     </ol>
                 </nav> --}}
-                <h2 class="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Produk Terbaru</h2>
+                <h2 class="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Produk Unggulan</h2>
             </div>
             <div class="flex items-center space-x-4">
-                <button data-modal-toggle="filterModal" data-modal-target="filterModal" type="button"
+                {{-- <button data-modal-toggle="filterModal" data-modal-target="filterModal" type="button"
                     class="flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-wood-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">
                     <svg class="-ms-0.5 me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m19 9-7 7-7-7" />
                     </svg>
-                </button>
+                </button> --}}
                 <button id="sortDropdownButton1" data-dropdown-toggle="dropdownSort1" type="button"
                     class="flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-wood-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto">
                     <svg class="-ms-0.5 me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M7 4v16M7 4l3 3M7 4 4 7m9-3h6l-6 6h6m-6.5 10 3.5-7 3.5 7M14 18h4" />
                     </svg>
-                    Sort
+                    Urutkan
                     <svg class="-me-0.5 ms-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -82,32 +82,28 @@
                         <li>
                             <a href="#"
                                 class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                The most popular </a>
+                                Paling Laku </a>
                         </li>
                         <li>
                             <a href="#"
                                 class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                Newest </a>
+                                Terbaru </a>
                         </li>
                         <li>
                             <a href="#"
                                 class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                Increasing price </a>
+                                Paling Mahal </a>
                         </li>
                         <li>
                             <a href="#"
                                 class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                Decreasing price </a>
+                                Paling Murah </a>
                         </li>
+
                         <li>
                             <a href="#"
                                 class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                No. reviews </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                Discount % </a>
+                                Diskon % </a>
                         </li>
                     </ul>
                 </div>
@@ -127,12 +123,11 @@
         </div>
         <div class="w-full text-center">
             <button type="button"
-                class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-wood-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Show
-                more</button>
+                class="rounded-lg border border-wood-700 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-wood-700 hover:text-wood-100  focus:z-10 focus:outline-none focus:ring-4 focus:ring-wood-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Lihat Semua</button>
         </div>
     </div>
     <!-- Filter modal -->
-    <form action="#" method="get" id="filterModal" tabindex="-1" aria-hidden="true"
+    {{-- <form action="#" method="get" id="filterModal" tabindex="-1" aria-hidden="true"
         class="fixed left-0 right-0 top-0 z-50 hidden h-modal w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
         <div class="relative h-full w-full max-w-xl md:h-auto">
             <!-- Modal content -->
@@ -1042,5 +1037,5 @@
                 </div>
             </div>
         </div>
-    </form>
+    </form> --}}
 </section>
