@@ -1,3 +1,4 @@
+
 <section class="bg-wood-50 py-8 antialiased dark:bg-gray-900 md:py-12">
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <!-- Heading & Filters -->
@@ -112,13 +113,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
-            @for ($i = 0; $i < 9; $i++)
+            @foreach ($products as $produk)
             {{-- card produk     --}}
-            <x-produkcard/>
 
+            <x-produk-card :produk="$produk" />
 
-            @endfor
+                
+            @endforeach
+
          
         </div>
         <div class="w-full text-center">

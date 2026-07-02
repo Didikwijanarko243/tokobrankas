@@ -1,3 +1,4 @@
+@props(['produk'])
 <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
     <div class="h-56 w-full">
         <a href="#">
@@ -11,7 +12,7 @@
         <div class="mb-4 flex items-center justify-between gap-4">
             <span
                 class="me-2 rounded bg-wood-100 px-2.5 py-0.5 text-xs font-medium text-wood-800 dark:bg-wood-900 dark:text-wood-300">
-                Up to 35% off </span>
+                Up to 35% off {{ $produk->name }} </span>
 
             <div class="flex items-center justify-end gap-1">
                 <button type="button" data-tooltip-target="tooltip-quick-look"

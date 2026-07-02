@@ -10,31 +10,31 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
         /* base */
-
-  --color-base-50:  #E8ECEF; 
+ --color-base-50:  #E8ECEF; 
   /* Brand - orange coklat hangat */
-  --color-brand-50:  #fef6f0;
-  --color-brand-100: #fde8da;
-  --color-brand-200: #fbceb1;
-  --color-brand-300: #f8ab7c;
-  --color-brand-400: #f37f43;
-  --color-brand-500: #ea580c;
-  --color-brand-600: #c2410c;
-  --color-brand-700: #9a3412;
-  --color-brand-800: #7c2d12;
-  --color-brand-900: #431407;
+  /* Brand - biru utama, smooth dan nyaman di mata */
+--color-brand-50:  #f0f6fd;
+--color-brand-100: #dbe9fa;
+--color-brand-200: #b3d2f4;
+--color-brand-300: #82b4ea;
+--color-brand-400: #4f92dd;
+--color-brand-500: #2c72c7;
+--color-brand-600: #1f59a3;
+--color-brand-700: #1a4780;
+--color-brand-800: #173a67;
+--color-brand-900: #122a49;
 
-  /* Wood - coklat kayu natural */
-  --color-wood-50:  #FDF6EC;
-  --color-wood-100: #F5E6CC; 
-  --color-wood-200: #E8C99A;
-  --color-wood-300: #D8B485;
-  --color-wood-400: #C8A97A;
-  --color-wood-500: #B49060;
-  --color-wood-600: #A0785A;
-  --color-wood-700: #8B6F47;
-  --color-wood-800: #6B4F2E;
-  --color-wood-900: #4A3728;
+/* Wood - biru kalem/muted, senada dengan brand */
+--color-wood-50:  #f3f7fa;
+--color-wood-100: #e2ebf1;
+--color-wood-200: #c7d8e3;
+--color-wood-300: #a4bccd;
+--color-wood-400: #839fb5;
+--color-wood-500: #66849e;
+--color-wood-600: #526a81;
+--color-wood-700: #435568;
+--color-wood-800: #384556;
+--color-wood-900: #2c3644;
 }
 
 @plugin "flowbite/plugin";
