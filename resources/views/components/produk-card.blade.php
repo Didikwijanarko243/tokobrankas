@@ -1,7 +1,7 @@
 @props(['produk'])
 <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
     <div class="h-56 w-full">
-        <a href="#">
+        <a href="{{ route('products.show', $produk) }}">
             <img class="mx-auto h-full dark:hidden" src="{{ $produk->thumbnail }}" alt="" />
             <img class="mx-auto hidden h-full dark:block"
                 src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="" />
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <a href="#"
+        <a href="{{ route('products.show', $produk) }}"
             class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">{{ $produk->name }}</a>
 
         <div class="mt-2 flex items-center gap-2">
@@ -120,10 +120,11 @@
             </p>
         </div>
         <div class="mt-4 flex items-center">
-
-
             <button type="button"
-                class="inline-flex w-full justify-center items-center rounded-lg bg-wood-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-wood-800 focus:outline-none focus:ring-4  focus:ring-wood-300 dark:bg-wood-600 dark:hover:bg-wood-700 dark:focus:ring-wood-800">
+                class="whatsapp-buy-btn inline-flex w-full justify-center items-center rounded-lg bg-wood-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-wood-800 focus:outline-none focus:ring-4 focus:ring-wood-300 dark:bg-wood-600 dark:hover:bg-wood-700 dark:focus:ring-wood-800"
+                data-product-name="{{ $produk->name }}" data-product-url="{{ url()->current() }}"
+                data-wa-number="{{ config('app.whatsapp_number', '628123456789') }}"
+                data-qty-target="quantity-input-{{ $produk->id }}">
                 <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                     height="24" fill="current" viewBox="0 0 32 32">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -1,11 +1,10 @@
 <?php
-
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 
 class Product extends Model
@@ -101,12 +100,12 @@ class Product extends Model
     {
         $base = Str::slug($name);
         $slug = $base;
-        $i = 1;
+        $i    = 1;
 
         while (
             static::where('slug', $slug)
-                ->when($ignoreId, fn (Builder $q) => $q->where('id', '!=', $ignoreId))
-                ->exists()
+            ->when($ignoreId, fn(Builder $q) => $q->where('id', '!=', $ignoreId))
+            ->exists()
         ) {
             $slug = "{$base}-{$i}";
             $i++;
@@ -157,20 +156,20 @@ class Product extends Model
     public function schemaMarkup(): array
     {
         return [
-            '@context'    => 'https://schema.org/',
-            '@type'       => $this->schema_type ?: 'Product',
-            'name'        => $this->name,
-            'description' => $this->meta_description ?: Str::limit(strip_tags($this->description), 160),
-            'sku'         => $this->sku,
-            'gtin'        => $this->gtin,
-            'brand'       => [
+            '@context'        => 'https://schema.org/',
+            '@type'           => $this->schema_type ?: 'Product',
+            'name'            => $this->name,
+            'description'     => $this->meta_description ?: Str::limit(strip_tags($this->description), 160),
+            'sku'             => $this->sku,
+            'gtin'            => $this->gtin,
+            'brand'           => [
                 '@type' => 'Brand',
                 'name'  => $this->brand ?: config('app.name'),
             ],
-            'image' => $this->gallery
+            'image'           => $this->gallery
                 ? array_merge([$this->thumbnail], $this->gallery)
                 : [$this->thumbnail],
-            'offers' => [
+            'offers'          => [
                 '@type'         => 'Offer',
                 'url'           => $this->canonical_url,
                 'priceCurrency' => 'IDR',
@@ -183,5 +182,16 @@ class Product extends Model
                 'reviewCount' => (string) $this->rating_count,
             ] : null,
         ];
+    }
+
+    // app/Models/Product.php
+    public function promotions()
+    {
+        return $this->hasMany(Promotion::class);
+    }
+
+    public function activePromotion()
+    {
+        return $this->hasOne(Promotion::class)->active()->latest();
     }
 }

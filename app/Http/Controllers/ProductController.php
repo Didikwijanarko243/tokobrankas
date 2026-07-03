@@ -97,8 +97,8 @@ class ProductController extends Controller
             'og_image'    => $product->og_image,
             'schema'      => $product->schemaMarkup(),
         ];
-
-        return view('products.show', compact('product', 'related', 'seo'));
+// dd($product);
+        return view('pages.produk_detail', compact('product', 'related', 'seo'));
     }
 
     /**

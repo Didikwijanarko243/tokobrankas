@@ -17,7 +17,7 @@
 <body>
     <div class="min-h-screen bg-base-50">
         <x-navbar />
-        <main class="max-w-6xl mx-auto px-6 py-8">
+        <main class="max-w-6xl mx-auto px-6 py-10">
 
             @yield('content')
 

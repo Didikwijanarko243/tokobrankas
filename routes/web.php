@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home');
-});
+})->name('home');
 
 // Route::get('/produk-kategori', function () {
 //     return view('pages.produk-kategori');

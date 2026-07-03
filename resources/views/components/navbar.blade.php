@@ -25,8 +25,14 @@
 
                   <!-- Menu desktop -->
                   <div class="hidden md:flex items-center gap-8">
-                      <a href="#" class="text-wood-600 hover:text-wood-500 transition-colors">Beranda</a>
-                      <a href="#" class="text-wood-600 hover:text-wood-500 transition-colors">Produk</a>
+                      <a href="{{ route('home') }}"
+                          class="transition-colors {{ request()->routeIs('home') ? 'text-wood-800 font-semibold' : 'text-wood-600 hover:text-wood-500' }}">
+                          Beranda
+                      </a>
+                      <a href="{{ route('products.index') }}"
+                          class="transition-colors {{ request()->routeIs('products.*') ? 'text-wood-800 font-semibold' : 'text-wood-600 hover:text-wood-500' }}">
+                          Produk
+                      </a>
                       <a href="#" class="text-wood-600 hover:text-wood-500 transition-colors">Tentang</a>
                       <a href="#" class="text-wood-600 hover:text-wood-500 transition-colors">Kontak</a>
                   </div>
@@ -90,32 +96,32 @@
 
                       <!-- Search mobile -->
                       <form action="{{ route('products.index') }}" method="get">
-                      <div class="relative sm:hidden mb-2">
-                          <span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-wood-400">
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round">
-                                  <circle cx="11" cy="11" r="7" />
-                                  <line x1="16.5" y1="16.5" x2="22" y2="22" />
-                              </svg>
-                          </span>
-                          <input type="search" name="q" placeholder="Cari kebutuhan anda.."
-                              class="w-full h-9 pl-9 pr-4 text-sm text-wood-700 bg-base-50
+                          <div class="relative sm:hidden mb-2">
+                              <span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-wood-400">
+                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round">
+                                      <circle cx="11" cy="11" r="7" />
+                                      <line x1="16.5" y1="16.5" x2="22" y2="22" />
+                                  </svg>
+                              </span>
+                              <input type="search" name="q" placeholder="Cari kebutuhan anda.."
+                                  class="w-full h-9 pl-9 pr-4 text-sm text-wood-700 bg-base-50
                    border border-wood-200 rounded-xl outline-none
                    focus:border-wood-400 focus:ring-2 focus:ring-wood-200
                    placeholder:text-wood-300 transition duration-200" />
-                      </div>
+                          </div>
                       </form>
-                      <a href="#"
-                          class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-wood-700 hover:bg-wood-100 hover:text-wood-500 transition-colors font-medium">
+                      <a href="{{ route('home') }}"
+                          class="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors font-medium {{ request()->routeIs('home') ? 'bg-wood-100 text-wood-500' : 'text-wood-700 hover:bg-wood-100 hover:text-wood-500' }}">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                           </svg>
                           Beranda
                       </a>
-                      <a href="#"
-                          class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-wood-700 hover:bg-wood-100 hover:text-wood-500 transition-colors font-medium">
+                      <a href="{{ route('products.index') }}"
+                          class="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors font-medium {{ request()->routeIs('products.*') ? 'bg-wood-100 text-wood-500' : 'text-wood-700 hover:bg-wood-100 hover:text-wood-500' }}">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
