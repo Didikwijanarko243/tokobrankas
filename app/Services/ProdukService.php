@@ -36,13 +36,25 @@ class ProdukService
             'canonical'   => url()->current(),
         ];
 
-        // return $products;
-        // dd($products);
         return $products;
-        // return Product::where('is_active', true)
-        //     ->where('is_featured', true)
-        //     ->latest()
-        //     ->take($limit)
-        //     ->get();
+
+    }
+
+    public function getProduk()
+    {
+        $products = Product::query()
+            ->active()
+            ->with('category')
+            ->when($request->filled('category'), function ($q) use ($request) {
+                $q->whereHas('category', fn ($c) => $c->where('slug', $request->category));
+            })
+            ->when($request->filled('q'), function ($q) use ($request) {
+                $q->where('name', 'like', '%' . $request->q . '%');
+            })
+            ->latest()
+            ->paginate(12)
+            ->withQueryString();
+
+        $categories = Category::orderBy('name')->get();
     }
 }

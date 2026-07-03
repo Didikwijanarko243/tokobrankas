@@ -40,8 +40,8 @@ class ProductController extends Controller
             'description' => 'Jelajahi katalog produk lengkap kami dengan harga terbaik.',
             'canonical'   => url()->current(),
         ];
-dd($products);
-        // return view('products.index', compact('products', 'categories', 'seo'));
+// dd($products);
+        return view('pages.produk-kategori', compact('products', 'categories', 'seo'));
     }
 
     /**

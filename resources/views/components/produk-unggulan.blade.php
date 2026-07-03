@@ -122,8 +122,8 @@
          
         </div>
         <div class="w-full text-center">
-            <button type="button"
-                class="rounded-lg border border-wood-700 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-wood-700 hover:text-wood-100  focus:z-10 focus:outline-none focus:ring-4 focus:ring-wood-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Lihat Semua</button>
+            <a type="button" href="{{ route('products.index') }}"
+                class="rounded-lg border border-wood-700 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-wood-700 hover:text-wood-100  focus:z-10 focus:outline-none focus:ring-4 focus:ring-wood-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Lihat Semua</a>
         </div>
     </div>
     <!-- Filter modal -->
