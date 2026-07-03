@@ -35,30 +35,32 @@
                   <div class="flex items-center gap-4">
 
                       <!-- Search -->
-                      <div class="relative hidden sm:block">
-                          <span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-wood-400">
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <circle cx="11" cy="11" r="7" />
-                                  <line x1="16.5" y1="16.5" x2="22" y2="22" />
-                              </svg>
-                          </span>
-                          <input type="search" name="search" placeholder="Cari kebutuhan anda.."
-                              class="h-9 pl-9 pr-4 w-52 text-sm text-wood-700 bg-wood-100
+                      <form action="{{ route('products.index') }}" method="get">
+                          <div class="relative hidden sm:block">
+                              <span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-wood-400">
+                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round">
+                                      <circle cx="11" cy="11" r="7" />
+                                      <line x1="16.5" y1="16.5" x2="22" y2="22" />
+                                  </svg>
+                              </span>
+                              <input type="search" name="q" placeholder="Cari kebutuhan anda.."
+                                  class="h-9 pl-9 pr-4 w-52 text-sm text-wood-700 bg-wood-100
                    border border-wood-200 rounded-xl outline-none
                    focus:border-wood-400 focus:ring-2 focus:ring-wood-200
                    placeholder:text-wood-300 transition duration-200" />
-                      </div>
-
+                          </div>
+                      </form>
                       <!-- Cart -->
-                      <button class="relative p-1">
+                      {{-- <button class="relative p-1">
                           <svg class="w-6 h-6 text-wood-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" />
                           </svg>
                           <span
                               class="absolute -top-1 -right-1 bg-wood-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center leading-none">3</span>
-                      </button>
+                      </button> --}}
 
                       <!-- Hamburger animasi -->
                       <label for="menu-toggle" class="md:hidden cursor-pointer p-1 group">
@@ -87,6 +89,7 @@
                   <div class="flex flex-col gap-1 pb-4 pt-2 border-t border-wood-100">
 
                       <!-- Search mobile -->
+                      <form action="{{ route('products.index') }}" method="get">
                       <div class="relative sm:hidden mb-2">
                           <span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-wood-400">
                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -96,13 +99,13 @@
                                   <line x1="16.5" y1="16.5" x2="22" y2="22" />
                               </svg>
                           </span>
-                          <input type="search" placeholder="Cari kebutuhan anda.."
+                          <input type="search" name="q" placeholder="Cari kebutuhan anda.."
                               class="w-full h-9 pl-9 pr-4 text-sm text-wood-700 bg-base-50
                    border border-wood-200 rounded-xl outline-none
                    focus:border-wood-400 focus:ring-2 focus:ring-wood-200
                    placeholder:text-wood-300 transition duration-200" />
                       </div>
-
+                      </form>
                       <a href="#"
                           class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-wood-700 hover:bg-wood-100 hover:text-wood-500 transition-colors font-medium">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

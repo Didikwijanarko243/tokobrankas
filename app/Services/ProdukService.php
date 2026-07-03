@@ -56,5 +56,16 @@ class ProdukService
             ->withQueryString();
 
         $categories = Category::orderBy('name')->get();
+
+        // Data SEO untuk halaman listing (dipakai di <head> Blade)
+        $seo = [
+            'title'       => $request->filled('q')
+                ? 'Hasil pencarian: ' . $request->q
+                : 'Semua Produk',
+            'description' => 'Jelajahi katalog produk lengkap kami dengan harga terbaik.',
+            'canonical'   => url()->current(),
+        ];
+
+        return [$products, $categories, $seo];
     }
 }

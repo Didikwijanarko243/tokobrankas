@@ -15,7 +15,7 @@ class ProductController extends Controller
      * GET /produk
      * Halaman listing produk (publik) — mendukung filter kategori & pencarian.
      */
-    public function index(Request $request): View
+    public function index(Request $request, ): View
     {
         $products = Product::query()
             ->active()
@@ -30,7 +30,7 @@ class ProductController extends Controller
             ->paginate(12)
             ->withQueryString();
 
-        $categories = Category::orderBy('name')->get();
+        $categories = Category::withCount('products')->orderBy('name')->get();
 
         // Data SEO untuk halaman listing (dipakai di <head> Blade)
         $seo = [
@@ -40,8 +40,8 @@ class ProductController extends Controller
             'description' => 'Jelajahi katalog produk lengkap kami dengan harga terbaik.',
             'canonical'   => url()->current(),
         ];
-// dd($products);
-        return view('pages.produk-kategori', compact('products', 'categories', 'seo'));
+
+        return view('pages.produk', compact('products', 'categories', 'seo'));
     }
 
     /**

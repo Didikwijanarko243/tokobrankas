@@ -1,3 +1,4 @@
+@props(['products'])
 <div class="bg-gray-50 min-h-screen">
     <!-- Header -->
     <header class="bg-wood-200 shadow-sm">
@@ -31,78 +32,13 @@
 
             <!-- Product Grid -->
             <main class="flex-1">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Product Card 1 -->
-                    <div
-                        class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
-                        <div class="h-64 bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-400">Product Image</span>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-gray-900 font-semibold text-lg">Premium Wireless Headphones</h3>
-                            <p class="text-gray-500 text-sm mt-1">Electronics</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-xl font-bold text-gray-900">$299.00</span>
-                                <button
-                                    class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">Add
-                                    to Cart</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+                    @forelse ($products as $produk)
+                        <x-produk-card :produk="$produk" />                        
+                    @empty
+                        <p>Tidak di temukan produk yang anda cari</p>                        
+                    @endforelse 
 
-                    <!-- Product Card 2 -->
-                    <div
-                        class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
-                        <div class="h-64 bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-400">Product Image</span>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-gray-900 font-semibold text-lg">Classic Leather Watch</h3>
-                            <p class="text-gray-500 text-sm mt-1">Accessories</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-xl font-bold text-gray-900">$149.00</span>
-                                <button
-                                    class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">Add
-                                    to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Card 3 -->
-                    <div
-                        class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
-                        <div class="h-64 bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-400">Product Image</span>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-gray-900 font-semibold text-lg">Minimalist Backpack</h3>
-                            <p class="text-gray-500 text-sm mt-1">Apparel</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-xl font-bold text-gray-900">$79.00</span>
-                                <button
-                                    class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">Add
-                                    to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Card 4 -->
-                    <div
-                        class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
-                        <div class="h-64 bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-400">Product Image</span>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-gray-900 font-semibold text-lg">Smart Home Hub</h3>
-                            <p class="text-gray-500 text-sm mt-1">Electronics</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-xl font-bold text-gray-900">$129.00</span>
-                                <button
-                                    class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">Add
-                                    to Cart</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </main>
         </div>
