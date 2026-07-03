@@ -21,5 +21,5 @@ Route::get('/', function () {
  
 // Halaman publik (index & show) dibiarkan terbuka tanpa auth,
 // supaya bisa diakses & di-crawl oleh Googlebot
-Route::get('produk', [ProductController::class, 'index'])->name('products.index');
-Route::get('produk/{product}', [ProductController::class, 'show'])->name('products.show');
+Route::get('product', [ProductController::class, 'index'])->name('products.index');
+Route::get('product/{product}', [ProductController::class, 'show'])->name('products.show');
