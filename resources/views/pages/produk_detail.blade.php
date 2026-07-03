@@ -4,7 +4,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 py-4">
 
         <div>
-            <img id="main-image" src="{{ $product->thumbnail }}" class="w-full rounded-xl shadow-md object-cover">
+            <img id="main-image" src="{{ asset($product->thumbnail) }}" class="w-full rounded-xl shadow-md object-cover">
 
             <div class="flex gap-3 mt-4">
                 @foreach ($product->gallery as $item)

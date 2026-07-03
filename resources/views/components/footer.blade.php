@@ -1,14 +1,42 @@
-        <footer class="p-4 bg-wood-200 sm:p-6 dark:bg-gray-800">
+        <footer class="p-4 bg-wood-200 sm:p-6 dark:bg-gray-800" id="kontak">
             <div class="mx-auto max-w-screen-xl">
-                <div class="md:flex md:justify-between">
+                <div class="md:flex md:justify-start">
                     <div class="mb-6 md:mb-0">
-                        <a href="https://flowbite.com" class="flex items-center">
-                            <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-8" alt="FlowBite Logo" />
-                            <span
-                                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-                        </a>
+                        <iframe
+                            src="https://maps.google.com/maps?q=CV.CONCEAL%20MANDIRI%20UTAMA&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                            class="w-full h-50 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+                            loading="lazy" allowfullscreen>
+                        </iframe>
+
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                CV. CONCEAL MANDIRI UTAMA
+                            </h3>
+                            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                Kunjungi showroom kami untuk melihat berbagai pilihan brankas berkualitas
+                                dan mendapatkan konsultasi langsung mengenai produk yang sesuai dengan
+                                kebutuhan Anda.
+                            </p>
+
+                            <div class="mt-4 flex items-center">
+                                <button type="button"
+                                    class="whatsapp-buy-btn inline-flex justify-center items-center rounded-lg bg-wood-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-wood-800 focus:outline-none focus:ring-4 focus:ring-wood-300 dark:bg-wood-600 dark:hover:bg-wood-700 dark:focus:ring-wood-800"
+                                    data-product-name="Katalog Brankas" data-product-url="{{ url()->current() }}"
+                                    data-wa-number="{{ config('app.whatsapp_number', '628123456789') }}"
+                                    data-qty-target="1">
+                                    <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="current"
+                                        viewBox="0 0 32 32">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M16.001 3C8.82 3 3 8.82 3 16c0 2.58.75 5.1 2.17 7.26L3 29l5.91-2.11A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16.001 3zm0 23.63c-2.16 0-4.27-.58-6.11-1.69l-.44-.26-3.5 1.25 1.29-3.41-.29-.47A10.6 10.6 0 0 1 5.37 16c0-5.86 4.77-10.63 10.63-10.63S26.63 10.14 26.63 16s-4.76 10.63-10.63 10.63zm5.83-7.97c-.32-.16-1.88-.93-2.17-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.56-.94-.84-1.58-1.87-1.76-2.18-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.72-.97-2.35-.26-.63-.53-.55-.71-.56h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.26 3.45 5.47 4.83.76.33 1.36.53 1.83.68.77.25 1.47.22 2.02.13.62-.09 1.88-.77 2.15-1.52.26-.75.26-1.39.18-1.52-.08-.13-.29-.21-.61-.37z" />
+                                    </svg>
+                                    Konsultasi Whatsapp
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    {{-- <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources
                             </h2>
@@ -45,12 +73,12 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
                     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">©
-                        2022 <a href="https://flowbite.com" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                        2026 <a href="#" class="hover:underline">ProdusenBrankas</a>. All Rights Reserved.
                     </span>
                     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">

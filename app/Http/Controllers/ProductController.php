@@ -39,6 +39,8 @@ class ProductController extends Controller
                 : 'Semua Produk',
             'description' => 'Jelajahi katalog produk lengkap kami dengan harga terbaik.',
             'canonical'   => url()->current(),
+            'keywords'    => $request->q.',brankas, jual brankas, brankas murah',
+            'image'       => asset('produk/polaris.jpeg')
         ];
 
         return view('pages.produk', compact('products', 'categories', 'seo'));
@@ -96,6 +98,9 @@ class ProductController extends Controller
             'og_description' => $product->og_description,
             'og_image'    => $product->og_image,
             'schema'      => $product->schemaMarkup(),
+            'keywords'    => $product->keywords ?? 'brankas terbaik, brankas rumah, brankas kantor',
+            'image'       => $product->og_image
+            
         ];
 // dd($product);
         return view('pages.produk_detail', compact('product', 'related', 'seo'));

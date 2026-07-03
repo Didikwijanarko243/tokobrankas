@@ -39,6 +39,7 @@
                         <p>Tidak di temukan produk yang anda cari</p>                        
                     @endforelse 
 
+                    {{ $products->links() }}
                 </div>
             </main>
         </div>

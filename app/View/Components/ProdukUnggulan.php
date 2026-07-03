@@ -10,7 +10,7 @@ use App\Services\ProdukService;
 class ProdukUnggulan extends Component
 {
     public $products;
-  
+    public $seo;
     /**
      * Create a new component instance.
      */
@@ -20,6 +20,8 @@ class ProdukUnggulan extends Component
         
         $this->products = $productService->getFeatured($limit);
         // dd($this->products);
+        $this->seo = $this->products[1];
+        // dd($this->seo);
     }
 
     /**

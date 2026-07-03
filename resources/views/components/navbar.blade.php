@@ -4,8 +4,8 @@
               <div class="flex items-center justify-between h-16">
 
                   <!-- Logo -->
-                  <a href="#" class="flex items-center gap-3">
-                      <svg width="40" height="40" viewBox="0 0 56 56" fill="none"
+                  <a href="{{ route('home') }}" class="flex items-center gap-3">
+                      {{-- <svg width="40" height="40" viewBox="0 0 56 56" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <rect x="10" y="4" width="36" height="7" rx="3" fill="#C8A97A" />
                           <rect x="10" y="10" width="5" height="26" rx="2.5" fill="#8B6F47" />
@@ -15,11 +15,11 @@
                           <rect x="12" y="38" width="8" height="14" rx="3" fill="#8B6F47" />
                           <rect x="36" y="38" width="8" height="14" rx="3" fill="#8B6F47" />
                           <rect x="10" y="36" width="36" height="6" rx="3" fill="#8B6F47" />
-                      </svg>
+                      </svg> --}}
                       <div class="flex flex-col leading-tight">
                           <span class="text-xl font-bold text-wood-900"
-                              style="font-family: Georgia, serif; letter-spacing: 1px;">Naima</span>
-                          <span class="text-xs font-medium text-wood-600 tracking-widest">FURNITURE</span>
+                              style="font-family: Georgia, serif; letter-spacing: 1px;">Produsen</span>
+                          <span class="text-xs font-medium text-wood-600 tracking-widest">BRANKAS</span>
                       </div>
                   </a>
 
@@ -33,8 +33,8 @@
                           class="transition-colors {{ request()->routeIs('products.*') ? 'text-wood-800 font-semibold' : 'text-wood-600 hover:text-wood-500' }}">
                           Produk
                       </a>
-                      <a href="#" class="text-wood-600 hover:text-wood-500 transition-colors">Tentang</a>
-                      <a href="#" class="text-wood-600 hover:text-wood-500 transition-colors">Kontak</a>
+                      <a href="#tentang" class="text-wood-600 hover:text-wood-500 transition-colors">Tentang</a>
+                      <a href="#kontak" class="text-wood-600 hover:text-wood-500 transition-colors">Kontak</a>
                   </div>
 
                   <!-- Kanan: search + cart + hamburger -->
@@ -128,7 +128,7 @@
                           </svg>
                           Produk
                       </a>
-                      <a href="#"
+                      <a href="#tentang"
                           class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-wood-700 hover:bg-wood-100 hover:text-wood-500 transition-colors font-medium">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -136,7 +136,7 @@
                           </svg>
                           Tentang
                       </a>
-                      <a href="#"
+                      <a href="#kontak"
                           class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-wood-700 hover:bg-wood-100 hover:text-wood-500 transition-colors font-medium">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

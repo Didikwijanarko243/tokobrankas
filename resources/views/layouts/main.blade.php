@@ -1,17 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>toko-online</title>
+    <meta name="description" content="{{ $seo['description'] ?? '' }}">
+    <meta name="keywords" content="{{ $seo['keywords'] ?? '' }}">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $seo['title'] ?? 'Brankas murah terbaik' }}">
+    <meta property="og:description" content="{{ $seo['description'] ?? ''}}">
+    <meta property="og:url" content="{{ $seo['canonical'] ?? url()->current() }}">
+    <meta property="og:image" content="{{ $seo['image'] ?? ''}}">
+    <meta property="og:site_name" content="{{ config('app.name') }}">
+
+    <link rel="canonical" href="{{ $seo['canonical'] ?? url()->current() }}">
+    <title>{{ $seo['title'] ?? 'Brankas murah terbaik' }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+
 </head>
 
 <body>
@@ -75,7 +86,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
-     
+
 </body>
 
 </html>

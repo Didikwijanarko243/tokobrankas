@@ -56,7 +56,10 @@
                         @empty
                             <p>Tidak di temukan produk yang anda cari</p>
                         @endforelse
-
+                       
+                    </div>
+                    <div class="mt-4 justify-end px-4">
+                         {{ $products->links('vendor.pagination.simple-tailwind') }}
                     </div>
                 </main>
             </div>

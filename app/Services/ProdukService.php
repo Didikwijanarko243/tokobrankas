@@ -1,7 +1,6 @@
 <?php
-
-
 namespace App\Services;
+
 use App\Models\Category;
 use App\Models\Product;
 
@@ -30,13 +29,15 @@ class ProdukService
         // Data SEO untuk halaman listing (dipakai di <head> Blade)
         $seo = [
             'title'       => 'Brankas Termurah'
-                ? 'Hasil pencarian: Produk Unggulan' 
+                ? 'Hasil pencarian: Produk Unggulan'
                 : 'Semua Produk',
             'description' => 'Produk Unggulan Kami, Tersedia dengan Harga Terbaik.',
             'canonical'   => url()->current(),
+            'keywords'    => 'brankas, jual brankas, brankas murah',
+            'image'       => asset('produk/polaris.jpeg')
         ];
 
-        return $products;
+        return [$products, $seo];
 
     }
 
@@ -46,7 +47,7 @@ class ProdukService
             ->active()
             ->with('category')
             ->when($request->filled('category'), function ($q) use ($request) {
-                $q->whereHas('category', fn ($c) => $c->where('slug', $request->category));
+                $q->whereHas('category', fn($c) => $c->where('slug', $request->category));
             })
             ->when($request->filled('q'), function ($q) use ($request) {
                 $q->where('name', 'like', '%' . $request->q . '%');
